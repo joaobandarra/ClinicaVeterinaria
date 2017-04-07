@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -18,6 +19,16 @@ namespace ClinicaVeterinaria.Models
         public int Idade { get; set; }
 
         public double Peso { get; set; }
+
+
+        //***************************************************************************
+        //  criar a chave forasteira
+        //  Um animal tem um dono
+        //***************************************************************************
+        [ForeignKey("DonoFK")]
+        public Donos Dono { get; set; } // relaciona, no c#, um animal com o seu dono
+        public int DonoFK { get; set; } // na BD vai criar a foreign key
+
 
     }
 }

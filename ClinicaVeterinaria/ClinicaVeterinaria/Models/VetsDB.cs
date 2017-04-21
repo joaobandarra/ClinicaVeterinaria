@@ -17,6 +17,9 @@ namespace ClinicaVeterinaria.Models
 
         public virtual DbSet<Animais> Animais { get; set; }
 
+        public virtual DbSet<Consultas> Consultas { get; set; }
+
+        public virtual DbSet<Veterinarios> Veterinarios { get; set; }
         //**********************************************************
         //  onde criar e de que tipo será a base de dados
         //**********************************************************

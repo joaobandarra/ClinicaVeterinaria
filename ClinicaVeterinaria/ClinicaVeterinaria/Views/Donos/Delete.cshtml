@@ -1,0 +1,41 @@
+﻿@model ClinicaVeterinaria.Models.Donos
+
+@{
+    ViewBag.Title = "remover donos da bd";
+}
+
+<h2>Remover donos da bd</h2>
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+<h3>Tem a certeza que quer apagar este registo?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NIF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIF)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Remover" class="btn btn-default" /> |
+            @Html.ActionLink("regressar à listagem", "Index")
+        </div>
+    }
+</div>
